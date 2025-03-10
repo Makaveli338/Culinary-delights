@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
-  <head>
     <head>
       <title>Cullinary Delights INDEX</title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      
+      <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     </head>
-  <body class="bg-[#e6e1de]">
+  <body x-data="{'isModalOpen': false}" x-on:keydown.escape="isModalOpen=false" class="bg-[#e6e1de] ">
+    
     <header
     class="bg-[#CCC0BB] w-full border-[2px] border-[#543512] gap-2 text-2xl text-[#41290E] font-[RB Magnat Neue Display Test]  font-bold justify-center items-center flex py-4"
   >
@@ -95,10 +95,13 @@
             </div>
           </div>
            -->
-          <div class="py-6 flex w-full">
+          <div x-data="{ open: true }"> 
+          <div class="py-6 flex w-full " >
             <p class="font-medium text-x1">Starters</p>
+            <button class="ml-[85%]" @click="open = ! open">
             <svg
-              class="ml-[85%]"
+              :class="{'rotate-180': open, 'rotate-0': !open}"
+              class="transition-transform duration-300"
               width="20"
               height="20"
               viewBox="0 0 20 20"
@@ -113,9 +116,11 @@
                 stroke-linejoin="round"
               />
             </svg>
+          </button>
           </div>
+          <div x-show="open" @click.outside="open = false">
           <!-- periperi chicken -->
-          <div>
+          <div >
             <div class="flex">
               <div class="w-[84%]">
                 <h1 class="font-semibold text-[#BA7529] text-x1">
@@ -125,18 +130,19 @@
                   Spicy pan-fried Chicken Liver, Creamy Sauce with garlic Bread
                 </p>
               </div>
-              <div class="font-bold py-4 ml-2">KES 1,050</div>
+              <div class="font-bold py-4 ml-2 my-auto">KES 1,050</div>
             </div>
             <!-- plus and minus -->
             <div class="flex gap-3">
-              <svg
+              <button>
+              <svg 
                 width="26"
                 height="26"
                 viewBox="0 0 26 26"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <rect width="25.6" height="25.6" rx="12.8" fill="#BA7529" />
+                <rect width="25.6" height="25.6" rx="12.8" fill="#BA7529" class="hover:fill-[#41290E]"  />
                 <path
                   d="M7.20007 12.8H18.4001"
                   stroke="white"
@@ -145,7 +151,9 @@
                   stroke-linejoin="round"
                 />
               </svg>
+            </button>
               <p class="font-medium">0</p>
+              <button>
               <svg
                 width="27"
                 height="26"
@@ -159,6 +167,7 @@
                   height="25.6"
                   rx="12.8"
                   fill="#BA7529"
+                  class="hover:fill-[#41290E]"
                 />
                 <path
                   d="M13.3998 7.20001V18.4M7.7998 12.8H18.9998"
@@ -168,6 +177,7 @@
                   stroke-linejoin="round"
                 />
               </svg>
+            </button>
             </div>
           </div>
           <!-- Tomato & Basil  Brusceheta -->
@@ -182,10 +192,11 @@
                   Balsamic Vinaigrette
                 </p>
               </div>
-              <div class="font-bold py-4 ml-2">KES 1,050</div>
+              <div class="font-bold py-4 ml-2 my-auto">KES 1,050</div>
             </div>
             <!-- plus and minus -->
             <div class="flex gap-3">
+              <button>
               <svg
                 width="26"
                 height="26"
@@ -193,7 +204,7 @@
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <rect width="25.6" height="25.6" rx="12.8" fill="#BA7529" />
+                <rect width="25.6" height="25.6" rx="12.8" fill="#BA7529" class="hover:fill-[#41290E]" />
                 <path
                   d="M7.20007 12.8H18.4001"
                   stroke="white"
@@ -202,7 +213,9 @@
                   stroke-linejoin="round"
                 />
               </svg>
+            </button>
               <p class="font-medium">0</p>
+              <button>
               <svg
                 width="27"
                 height="26"
@@ -216,6 +229,7 @@
                   height="25.6"
                   rx="12.8"
                   fill="#BA7529"
+                  class="hover:fill-[#41290E]"
                 />
                 <path
                   d="M13.3998 7.20001V18.4M7.7998 12.8H18.9998"
@@ -225,13 +239,14 @@
                   stroke-linejoin="round"
                 />
               </svg>
+            </button>
             </div>
           </div> 
           <!-- Asmara Garlic Mushrooms -->
           <div class="border-t border-[#EAD4BD] mt-4" >
             <div class="flex">
               <div class="w-[84%]">
-                <h1 class="font-semibold text-[#BA7529] text-x1">
+                <h1 class="font-semibold text-[#BA7529] text-x1 mt-4">
                   Asmara Garlic Mushroomseta
                 </h1>
                 <p class="font-medium text-[#595200] text-sm py-[11px]">
@@ -239,10 +254,11 @@
                   Balsamic Vinaigrette
                 </p>
               </div>
-              <div class="font-bold py-4 ml-2">KES 1,050</div>
+              <div class="font-bold py-4 ml-2 my-auto">KES 1,050</div>
             </div>
             <!-- plus and minus -->
             <div class="flex gap-3">
+              <button>
               <svg
                 width="26"
                 height="26"
@@ -250,7 +266,7 @@
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <rect width="25.6" height="25.6" rx="12.8" fill="#BA7529" />
+                <rect width="25.6" height="25.6" rx="12.8" fill="#BA7529" class="hover:fill-[#41290E]" />
                 <path
                   d="M7.20007 12.8H18.4001"
                   stroke="white"
@@ -259,7 +275,9 @@
                   stroke-linejoin="round"
                 />
               </svg>
+            </button>
               <p class="font-medium">0</p>
+              <button>
               <svg
                 width="27"
                 height="26"
@@ -273,6 +291,7 @@
                   height="25.6"
                   rx="12.8"
                   fill="#BA7529"
+                  class="hover:fill-[#41290E]"
                 />
                 <path
                   d="M13.3998 7.20001V18.4M7.7998 12.8H18.9998"
@@ -282,6 +301,7 @@
                   stroke-linejoin="round"
                 />
               </svg>
+            </button>
             </div>
           </div>
 
@@ -289,7 +309,7 @@
           <div class="border-t border-[#EAD4BD] mt-4">
             <div class="flex">
               <div class="w-[84%]">
-                <h1 class="font-semibold text-[#BA7529] text-x1">
+                <h1 class="font-semibold text-[#BA7529] text-x1 mt-4">
                   Prawns & Mango Salad
                 </h1>
                 <p class="font-medium text-[#595200] text-sm py-[11px]">
@@ -297,10 +317,11 @@
                   Balsamic Vinaigrette
                 </p>
               </div>
-              <div class="font-bold py-4 ml-2">KES 1,050</div>
+              <div class="font-bold py-4 ml-2 my-auto">KES 1,050</div>
             </div>
             <!-- plus and minus -->
             <div class="flex gap-3">
+             <button>
               <svg
                 width="26"
                 height="26"
@@ -308,7 +329,7 @@
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <rect width="25.6" height="25.6" rx="12.8" fill="#BA7529" />
+                <rect width="25.6" height="25.6" rx="12.8" fill="#BA7529" class="hover:fill-[#41290E]" />
                 <path
                   d="M7.20007 12.8H18.4001"
                   stroke="white"
@@ -317,7 +338,9 @@
                   stroke-linejoin="round"
                 />
               </svg>
+            </button>
               <p class="font-medium">0</p>
+              <button>
               <svg
                 width="27"
                 height="26"
@@ -331,6 +354,7 @@
                   height="25.6"
                   rx="12.8"
                   fill="#BA7529"
+                  class="hover:fill-[#41290E]"
                 />
                 <path
                   d="M13.3998 7.20001V18.4M7.7998 12.8H18.9998"
@@ -340,9 +364,12 @@
                   stroke-linejoin="round"
                 />
               </svg>
+            </button>
             </div>
           </div>
         </div>
+        </div>
+      </div>
       </div>
 
       <!-- right-side container -->
@@ -350,13 +377,13 @@
         <h1 class="text-2xl font-medium p-7">Checkout Summary</h1>
       
         <!-- food items heading -->
-         <div class="py-4 bg-[#F8F1EA] w-[90%] mx-auto ">
-            <p class=" py-2 ml-5 text-[16px] font-medium ">Food Items</p>
+         <div class="py-4 bg-[#F8F1EA] w-[90%] mx-auto rounded-xl ">
+            <p class=" ml-5 text-[16px] font-medium ">Food Items</p>
          </div>
 
         <!-- food items  -->
          <div class="grid place-items-center py-4">
-        <svg width="148" height="148" viewBox="0 0 148 148" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- <svg width="148" height="148" viewBox="0 0 148 148" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect width="148" height="148" rx="74" fill="#F2F5F8"/>
             <path d="M28.3087 80.6795L25.1222 87.5955" stroke="#99A0AE" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M23.2576 82.5444L30.1736 85.7309" stroke="#99A0AE" stroke-linecap="round" stroke-linejoin="round"/>
@@ -381,24 +408,59 @@
             <path d="M77.5858 92.3951L92.6211 107.425L108.404 91.6485L108.321 91.5892C105.499 89.7044 101.835 89.6572 98.977 91.4824L97.566 92.3833C94.6132 94.2681 90.8069 94.1613 87.9731 92.1106C86.4909 91.0321 84.7359 90.4868 82.981 90.4868C81.2142 90.4868 79.4472 91.044 77.9533 92.1344L77.5858 92.3951Z" fill="#CACFD8" stroke="#99A0AE" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
             <p>No food items added</p>
-            </div>
-           
-           <!-- total -->
-            <div class="border-t border-b border-[#EAD4BD] mx-6 mt-4">
-            <div class="bg-[#F8F1EA] flex my-4 rounded-xl items-center ">
-                <p class=" text-[#595200] ml-4 py-5 font-medium text-sm ">Total Amount</p>
-                <p class="ml-[40%] text-[#5F5F60] text-x1 font-medium"> KES 0 </p>
+            </div> -->
+
+            <div class=" w-[90%] mx-auto mt-4">
+              <div class="flex text-[#5F5F60] px-4 text-sm mx-auto ">
+                <p class="w-[89%]">Peri Peri Chicken Liver x3</p>
+                <p>Ksh 3150</p>
+              </div>       
+      
+              <div class="flex text-[#5F5F60] m-4 text-sm border-t border-[#EAD4BD]">
+                <p class="w-[89%] mt-4">Tomato & Basil  Brusceheta x3</p>
+                <p class="mt-4">Ksh 3150</p>
+              </div>
+      
+              <div class="flex text-[#5F5F60] m-4 text-sm border-t border-[#EAD4BD]">
+                  <p class="w-[89%] mt-4">Asmara Garlic Mushrooms</p>
+                  <p class="mt-4">Ksh 3150</p>
+                </div>
             </div>
           </div>
             <!-- buttons -->
              <div class="flex justify-end py-4 px-6 gap-4">
-                <button class=" border-[#EAD4BD] border cursor-pointer rounded-xl  text-[#5B3522] text-sm font-medium px-[18px] py-2"> Cancel</button>
-                <button class=" cursor-pointer rounded-xl bg-gradient-to-b from-[#593424] to-[#704619] text-white text-sm font-medium px-[18px] py-2"> pay</button>
+                <button class=" border-[#EAD4BD] border cursor-pointer rounded-xl  text-[#5B3522] text-sm font-medium px-[18px] py-2 hover:bg-[#41290E] hover:text-white  "> Cancel</button>
+                <button x-on:click="isModalOpen = true" class=" cursor-pointer rounded-xl bg-[#704619] text-white text-sm hover:bg-[#41290E] font-medium px-[18px] py-2"> Pay</button>
 
              </div>  
 
       </div>
     </section>
+    <div class="fixed inset-0 w-full h-full bg-black opacity-75" x-show="isModalOpen" x-cloak></div>
+    <!-- Modal STK Banner -->
+  <div class=" fixed inset-0 z-10" role="dialog" tabindex="-1" x-show="isModalOpen" x-on:click.away="isModalOpen = false" x-cloak x-transition>>
+    <div class="w-[55%] mt-[15%] mx-auto border border-[#EAD4BD] bg-white rounded-xl" x-on:click.away="isModalOpen = false" >
+       <h1 class="font-medium text-[#101828] p-6">Send STK Payment</h1> 
+       <div>
+           <label for="phone" class=" text-[#475467] ml-6">Phone Number</label>
+           <div class="flex border border-[#D0D5DD] rounded-[12px] mx-6 overflow-hidden mt-[6px]">
+             <select class="bg-gray-100 text-gray-700 text-sm px-3 border-r border-[#D0D5DD] focus:outline-none rounded-l-[12px]">
+               <option value="+254">+254</option>
+               <option value="+1">+1</option>
+             </select>
+             <input class="w-full h-11 px-2 focus:outline-none text-gray-900 text-sm rounded-r-[12px]" 
+               type="tel" id="phone" placeholder="Enter your number">
+           </div>
+         </div>
+         <!-- buttons -->
+         <div class="flex justify-end py-4 px-6 gap-4">
+           <button x-on:click="isModalOpen = false" class="  border-[#EAD4BD] border cursor-pointer rounded-xl  text-[#5B3522] text-sm font-medium px-[18px] py-2 hover:bg-[#41290E] hover:text-white"> Cancel</button>
+           <a href="pay.html">
+           <button class=" cursor-pointer rounded-xl bg-[#704619] text-white text-sm font-medium px-[18px] py-2 hover:bg-[#41290E] "> send</button>
+          </a>
+        </div>            
+       </div>
+   </div>
 
     <footer class=" bg-[#281710] w-full mt-[200px]">
       <div class=" mx-auto py-[64px] w-[88%] text-[#EAD4BD] text-center">
@@ -447,5 +509,11 @@
 <script 
   src="https://cdn.tailwindcss.com">
   src="https://kit.fontawesome.com/7a6c6b42a6.js"
-  crossorigin="anonymous"
+  crossorigin="anonymous"  
 </script>
+<style>
+  [x-cloak] {
+    display: none !important;
+  }
+</style>
+
