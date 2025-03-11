@@ -78,27 +78,14 @@
     </svg>
     Cullinary Delights
   </header>
- <section class=" mx-auto md/lg:w-[80%] container mt-[71px] md/lg:flex grid  gap-4">
-      <div class="bg-white rounded-xl h-auto md/lg:w-[50%] w-[90%] mx-auto ">
-        <div class="p-6">
-          <h1 class="text-2xl font-medium">What would you like to order?</h1>
-          <!--         
-        <div class="border-b border-[#0A071B]/10">
-            <button class="question-btn flex w-full items-start gap-x-5 justify-between rounded-lg text-left text-lg font-bold text-slate-800 focus:outline-none p-5" data-toggle="answer-1">
-              <span>What types of hosting plans do you offer?</span>
-              <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="mt-1.5 md:mt-0 flex-shrink-0 rotate-180 transform h-5 w-5 text-[#5B5675]" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                <path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path>
-              </svg>
-            </button>
-            <div class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-[#343E3A] font-medium" id="answer-1" style="display: none;">
-              We offer shared hosting, VPS hosting, dedicated server hosting, and cloud hosting plans.
-            </div>
-          </div>
-           -->
+ <section class=" mx-auto md/lg:w-[80%] container mt-[71px] md/lg:flex grid gap-4 items-start">
+      <div class="bg-white rounded-xl h-full md/lg:w-[50%] w-[90%] mx-auto ">
+        <div class="w-[90%] mx-auto">
+          <h1 class="text-2xl font-medium mt-7 ">What would you like to order?</h1>
           <div x-data="{ open: true }"> 
           <div class="py-6 flex w-full " >
-            <p class="font-medium text-x1">Starters</p>
-            <button class="ml-[85%]" @click="open = ! open">
+            <p class="font-medium text-x1 w-11/12">Starters</p>
+            <button @click="open = ! open">
             <svg
               :class="{'rotate-180': open, 'rotate-0': !open}"
               class="transition-transform duration-300"
@@ -320,7 +307,7 @@
               <div class="font-bold py-4 ml-2 my-auto">KES 1,050</div>
             </div>
             <!-- plus and minus -->
-            <div class="flex gap-3">
+            <div class="flex gap-3 mb-4">
              <button>
               <svg
                 width="26"
@@ -370,6 +357,289 @@
         </div>
         </div>
       </div>
+
+      <div class="mx-auto w-[90%] border-t border-b border-[#EAD4BD] mb-5" x-data="{ open: true }"> 
+          <div class="py-6 flex w-full " >
+            <p class="font-medium text-x1 w-11/12">Salads</p>
+            <button  @click="open = ! open">
+            <svg
+              :class="{'rotate-180': open, 'rotate-0': !open}"
+              class="transition-transform duration-300"
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5 7.5L10 12.5L15 7.5"
+                stroke="black"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+          </div>
+          <div x-show="open" @click.outside="open = false">
+          <!-- periperi chicken -->
+          <div >
+            <div class="flex">
+              <div class="w-[84%]">
+                <h1 class="font-semibold text-[#BA7529] text-x1">
+                  Peri peri Chicken Liver
+                </h1>
+                <p class="font-medium text-[#595200] text-sm py-[11px]">
+                  Spicy pan-fried Chicken Liver, Creamy Sauce with garlic Bread
+                </p>
+              </div>
+              <div class="font-bold py-4 ml-2 my-auto">KES 1,050</div>
+            </div>
+            <!-- plus and minus -->
+            <div class="flex gap-3">
+              <button>
+              <svg 
+                width="26"
+                height="26"
+                viewBox="0 0 26 26"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect width="25.6" height="25.6" rx="12.8" fill="#BA7529" class="hover:fill-[#41290E]"  />
+                <path
+                  d="M7.20007 12.8H18.4001"
+                  stroke="white"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+              <p class="font-medium">0</p>
+              <button>
+              <svg
+                width="27"
+                height="26"
+                viewBox="0 0 27 26"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  x="0.599976"
+                  width="25.6"
+                  height="25.6"
+                  rx="12.8"
+                  fill="#BA7529"
+                  class="hover:fill-[#41290E]"
+                />
+                <path
+                  d="M13.3998 7.20001V18.4M7.7998 12.8H18.9998"
+                  stroke="white"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+            </div>
+          </div>
+          <!-- Tomato & Basil  Brusceheta -->
+          <div class="border-t border-[#EAD4BD] mt-4" >
+            <div class="flex mt-4">
+              <div class="w-[84%]">
+                <h1 class="font-semibold text-[#BA7529] text-x1">
+                  Tomato & Basil Brusceheta
+                </h1>
+                <p class="font-medium text-[#595200] text-sm py-[11px]">
+                  Assorted Green Leaves, Fresh Herbs, Grilled Vegetables,
+                  Balsamic Vinaigrette
+                </p>
+              </div>
+              <div class="font-bold py-4 ml-2 my-auto">KES 1,050</div>
+            </div>
+            <!-- plus and minus -->
+            <div class="flex gap-3">
+              <button>
+              <svg
+                width="26"
+                height="26"
+                viewBox="0 0 26 26"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect width="25.6" height="25.6" rx="12.8" fill="#BA7529" class="hover:fill-[#41290E]" />
+                <path
+                  d="M7.20007 12.8H18.4001"
+                  stroke="white"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+              <p class="font-medium">0</p>
+              <button>
+              <svg
+                width="27"
+                height="26"
+                viewBox="0 0 27 26"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  x="0.599976"
+                  width="25.6"
+                  height="25.6"
+                  rx="12.8"
+                  fill="#BA7529"
+                  class="hover:fill-[#41290E]"
+                />
+                <path
+                  d="M13.3998 7.20001V18.4M7.7998 12.8H18.9998"
+                  stroke="white"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+            </div>
+          </div> 
+          <!-- Asmara Garlic Mushrooms -->
+          <div class="border-t border-[#EAD4BD] mt-4" >
+            <div class="flex">
+              <div class="w-[84%]">
+                <h1 class="font-semibold text-[#BA7529] text-x1 mt-4">
+                  Asmara Garlic Mushroomseta
+                </h1>
+                <p class="font-medium text-[#595200] text-sm py-[11px]">
+                  Assorted Green Leaves, Fresh Herbs, Grilled Vegetables,
+                  Balsamic Vinaigrette
+                </p>
+              </div>
+              <div class="font-bold py-4 ml-2 my-auto">KES 1,050</div>
+            </div>
+            <!-- plus and minus -->
+            <div class="flex gap-3">
+              <button>
+              <svg
+                width="26"
+                height="26"
+                viewBox="0 0 26 26"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect width="25.6" height="25.6" rx="12.8" fill="#BA7529" class="hover:fill-[#41290E]" />
+                <path
+                  d="M7.20007 12.8H18.4001"
+                  stroke="white"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+              <p class="font-medium">0</p>
+              <button>
+              <svg
+                width="27"
+                height="26"
+                viewBox="0 0 27 26"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  x="0.599976"
+                  width="25.6"
+                  height="25.6"
+                  rx="12.8"
+                  fill="#BA7529"
+                  class="hover:fill-[#41290E]"
+                />
+                <path
+                  d="M13.3998 7.20001V18.4M7.7998 12.8H18.9998"
+                  stroke="white"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+            </div>
+          </div>
+
+          <!-- Prawns & Mango Salad-->
+          <div class="border-t border-[#EAD4BD] mt-4">
+            <div class="flex">
+              <div class="w-[84%]">
+                <h1 class="font-semibold text-[#BA7529] text-x1 mt-4">
+                  Prawns & Mango Salad
+                </h1>
+                <p class="font-medium text-[#595200] text-sm py-[11px]">
+                  Assorted Green Leaves, Fresh Herbs, Grilled Vegetables,
+                  Balsamic Vinaigrette
+                </p>
+              </div>
+              <div class="font-bold py-4 ml-2 my-auto">KES 1,050</div>
+            </div>
+            <!-- plus and minus -->
+            <div class="flex gap-3 mb-4">
+             <button>
+              <svg
+                width="26"
+                height="26"
+                viewBox="0 0 26 26"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect width="25.6" height="25.6" rx="12.8" fill="#BA7529" class="hover:fill-[#41290E]" />
+                <path
+                  d="M7.20007 12.8H18.4001"
+                  stroke="white"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+              <p class="font-medium">0</p>
+              <button>
+              <svg
+                width="27"
+                height="26"
+                viewBox="0 0 27 26"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  x="0.599976"
+                  width="25.6"
+                  height="25.6"
+                  rx="12.8"
+                  fill="#BA7529"
+                  class="hover:fill-[#41290E]"
+                />
+                <path
+                  d="M13.3998 7.20001V18.4M7.7998 12.8H18.9998"
+                  stroke="white"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+            </div>
+          </div>
+        </div>
+        </div>
+
+      </div>
+
+
+
+
+
+
       </div>
 
       <!-- right-side container -->
@@ -383,7 +653,7 @@
 
         <!-- food items  -->
          <div class="grid place-items-center py-4">
-        <!-- <svg width="148" height="148" viewBox="0 0 148 148" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg width="148" height="148" viewBox="0 0 148 148" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect width="148" height="148" rx="74" fill="#F2F5F8"/>
             <path d="M28.3087 80.6795L25.1222 87.5955" stroke="#99A0AE" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M23.2576 82.5444L30.1736 85.7309" stroke="#99A0AE" stroke-linecap="round" stroke-linejoin="round"/>
@@ -408,9 +678,9 @@
             <path d="M77.5858 92.3951L92.6211 107.425L108.404 91.6485L108.321 91.5892C105.499 89.7044 101.835 89.6572 98.977 91.4824L97.566 92.3833C94.6132 94.2681 90.8069 94.1613 87.9731 92.1106C86.4909 91.0321 84.7359 90.4868 82.981 90.4868C81.2142 90.4868 79.4472 91.044 77.9533 92.1344L77.5858 92.3951Z" fill="#CACFD8" stroke="#99A0AE" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
             <p>No food items added</p>
-            </div> -->
+            </div>
 
-            <div class=" w-[90%] mx-auto mt-4">
+            <!-- <div class=" w-[90%] mx-auto mt-4">
               <div class="flex text-[#5F5F60] px-4 text-sm mx-auto ">
                 <p class="w-[89%]">Peri Peri Chicken Liver x3</p>
                 <p>Ksh 3150</p>
@@ -426,7 +696,15 @@
                   <p class="mt-4">Ksh 3150</p>
                 </div>
             </div>
-          </div>
+          </div> -->
+
+          <!-- total -->
+           <div class=" border-t border-b border-[#EAD4BD] mx-6 ">
+       <div class="bg-[#F8F1EA] flex my-4 rounded-xl  items-center ">
+        <p class=" w-[85%] text-[#595200] ml-4 py-5 font-medium text-sm ">Total Amount</p>
+        <p class=" text-[#5F5F60] text-x1 font-medium mr-4"> KES 0 </p>
+    </div>
+  </div>
             <!-- buttons -->
              <div class="flex justify-end py-4 px-6 gap-4">
                 <button class=" border-[#EAD4BD] border cursor-pointer rounded-xl  text-[#5B3522] text-sm font-medium px-[18px] py-2 hover:bg-[#41290E] hover:text-white  "> Cancel</button>
